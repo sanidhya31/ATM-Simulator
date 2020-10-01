@@ -1,3 +1,7 @@
+
+import java.awt.Toolkit;
+import java.util.*;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,13 +12,35 @@
  *
  * @author sarve
  */
+
 public class insert extends javax.swing.JFrame {
 
     /**
      * Creates new form insert
      */
     public insert() {
+        
+         this.setUndecorated(true);
+        
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        double width = toolkit.getScreenSize().getWidth();
+        
+        double height = toolkit.getScreenSize().getHeight();
+        
+        this.setSize((int)width, (int)height);
         initComponents();
+         Timer time=new Timer();
+         time.schedule(new TimerTask(){
+             
+             @Override
+             public void run()
+                 {
+                      lang l1 =new lang();
+                         l1.setVisible(true);
+                        dispose();
+                 }
+         } , 1850);
+         
     }
 
     /**
@@ -26,42 +52,32 @@ public class insert extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        insert_gif = new javax.swing.JLabel();
+        BG = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(470, 530));
+        setPreferredSize(new java.awt.Dimension(1370, 730));
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(470, 530));
+        jPanel2.setLayout(null);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MovingCard.gif"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jLabel1.setPreferredSize(new java.awt.Dimension(470, 530));
+        insert_gif.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MovingCard1.gif"))); // NOI18N
+        jPanel2.add(insert_gif);
+        insert_gif.setBounds(350, 0, 700, 730);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        BG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/w1.jpg"))); // NOI18N
+        jPanel2.add(BG);
+        BG.setBounds(0, 0, 1370, 730);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1370, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -98,12 +114,18 @@ public class insert extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new insert().setVisible(true);
+                
+                
+                
+               
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel BG;
+    private javax.swing.JLabel insert_gif;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

@@ -8,6 +8,7 @@
  *
  * @author sarve
  */
+import java.awt.Toolkit;
 
 public class card extends javax.swing.JFrame {
 
@@ -15,7 +16,17 @@ public class card extends javax.swing.JFrame {
      * Creates new form card
      */
     public card() {
+        
+        this.setUndecorated(true);
+        
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        double width = toolkit.getScreenSize().getWidth();
+        
+        double height = toolkit.getScreenSize().getHeight();
+        
+        this.setSize((int)width, (int)height);
         initComponents();
+        
     }
 
     /**
@@ -28,59 +39,70 @@ public class card extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        cardslot = new javax.swing.JLabel();
         card = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         Pls_insert = new javax.swing.JLabel();
         Welcome = new javax.swing.JLabel();
-        red_bg = new javax.swing.JLabel();
+        atm_bg = new javax.swing.JLabel();
         main_bg = new javax.swing.JLabel();
+        BG = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 153, 153));
 
+        jPanel1.setPreferredSize(new java.awt.Dimension(1370, 670));
         jPanel1.setLayout(null);
+
+        cardslot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cardslot2.jpg"))); // NOI18N
+        jPanel1.add(cardslot);
+        cardslot.setBounds(910, 470, 100, 40);
 
         card.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tide1.jpg"))); // NOI18N
         jPanel1.add(card);
-        card.setBounds(380, 330, 74, 120);
+        card.setBounds(920, 580, 74, 120);
 
-        jButton1.setText("Next");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(380, 333, 73, 110);
+        jButton1.setBounds(930, 590, 60, 100);
 
-        Pls_insert.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Pls_insert.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         Pls_insert.setText("please insert the card");
         jPanel1.add(Pls_insert);
-        Pls_insert.setBounds(160, 190, 190, 20);
+        Pls_insert.setBounds(580, 310, 260, 40);
 
-        Welcome.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        Welcome.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         Welcome.setText("Welcome");
         jPanel1.add(Welcome);
-        Welcome.setBounds(180, 130, 120, 40);
+        Welcome.setBounds(600, 220, 240, 40);
 
-        red_bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/WelcomePage.jpg"))); // NOI18N
-        jPanel1.add(red_bg);
-        red_bg.setBounds(120, 130, 240, 160);
+        atm_bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atmbg2.jpg"))); // NOI18N
+        jPanel1.add(atm_bg);
+        atm_bg.setBounds(520, 190, 380, 240);
 
-        main_bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AtmGif.jpg"))); // NOI18N
+        main_bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/atmbgkey.jpg"))); // NOI18N
         jPanel1.add(main_bg);
-        main_bg.setBounds(0, -20, 470, 530);
+        main_bg.setBounds(350, 0, 700, 730);
+
+        BG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/w1.jpg"))); // NOI18N
+        jPanel1.add(BG);
+        BG.setBounds(0, 0, 1370, 730);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 728, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -88,9 +110,10 @@ public class card extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        insert i1 =new insert();
-i1.setVisible(true);
-dispose();
+        
+         insert i1 =new insert();
+         i1.setVisible(true);
+         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -129,12 +152,14 @@ dispose();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BG;
     private javax.swing.JLabel Pls_insert;
     private javax.swing.JLabel Welcome;
+    private javax.swing.JLabel atm_bg;
     private javax.swing.JLabel card;
+    private javax.swing.JLabel cardslot;
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel main_bg;
-    private javax.swing.JLabel red_bg;
     // End of variables declaration//GEN-END:variables
 }
